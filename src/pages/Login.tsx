@@ -1,12 +1,34 @@
 import React from "react"
 import SignUp from "./SignUp"
+import { useState } from "react"
+const userValid = {
+  email: "abc@gmail.com",
+  password: "1234"
+}
+
 const Login = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    email === userValid.email && password === userValid.password
+      ? alert("thanks for sign in")
+      : alert("invalid email or password")
+  }
   return (
     <>
       <div className="flex min-h-screen">
         <div
           className="flex flex-1 flex-col justify-center py-12 px-4 
-    sm:px-6 lg:flex-none lg:px-20 xl:px-24"
+    lg:flex-none lg:px-20 xl:px-24"
         >
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div>
@@ -37,6 +59,8 @@ const Login = () => {
                         type="email"
                         autoComplete="email"
                         required
+                        value={email}
+                        onChange={handleEmail}
                         className="block w-full appearance-none rounded-md border
                          border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm
                           focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
@@ -58,6 +82,8 @@ const Login = () => {
                         type="password"
                         autoComplete="current-password"
                         required
+                        value={password}
+                        onChange={handlePassword}
                         className="block w-full appearance-none rounded-md border
                          border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm
                           focus:border-indigo-500 focus:outline-none
@@ -99,6 +125,7 @@ const Login = () => {
                        bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm
                         hover:bg-indigo-700 focus:outline-none focus:ring-2
                          focus:ring-indigo-500 focus:ring-offset-2"
+                      onClick={handleSubmit}
                     >
                       Login
                     </button>

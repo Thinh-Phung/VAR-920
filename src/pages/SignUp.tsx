@@ -3,14 +3,14 @@ import React from "react"
 const SignUp = () => {
   return (
     <div
-      className="bg-white flex min-h-screen items-center justify-center 
+      className="bg-sky-100 flex min-h-screen items-center justify-center 
      md:px-3 lg:px-6"
     >
       <div
-        className="py-0 bg-sky-100 flex min-h-screen flex-1 flex-col justify-center  
+        className=" bg-white flex min-h-screen flex-1 flex-col justify-center  
        lg:flex-initial lg:px-20 xl:px-24"
       >
-        <h2 className="py-0 mt-6 text-3xl items-center justify-center font-bold tracking-tight text-gray-700">
+        <h2 className="py-4 mt-0 text-3xl items-center justify-center font-bold tracking-tight text-gray-700">
           Sign up
         </h2>
         <form action="#" method="POST" className="mt-3 space-y-6">
